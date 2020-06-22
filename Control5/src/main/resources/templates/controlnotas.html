@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  	<title>Curso FullStack: Ejemplo Spring-Thymeleaf-Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <link href="/css/bootstrap-table.min.css" rel="stylesheet" th:href="@{/css/bootstrap-table.min.css}"/>
+    <link href="/css/globalstyle.css" rel="stylesheet" th:href="@{/css/globalstyle.css}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/js/notas.js" th:href="@{/js/notas.js}"></script>
+  </head>
+
+<body>
+	<div class="container">
+	    <div class="panel panel-default " id="panel1 ">
+	    	<div class="panel-body ">
+	   	    	<h3>Sistema de Notas</h3>
+	   			<p>
+	   			<div class="btn-group">
+	               	<button type="button" class="btn btn-primary btn-sm" onclick="javascript:NotasController('list')">Listar</button>
+	               	<button type="button" class="btn btn-primary btn-sm" onclick="javascript:NotasController('get')">Buscar</button>
+	           		<button type="button" class="btn btn-primary btn-sm" onclick="javascript:NotasController('insert')">Nuevo</button>
+	           		<button type="button" class="btn btn-primary btn-sm" onclick="javascript:EmployeesController('update')">Grabar</button>
+	           		<button type="button" class="btn btn-primary btn-sm" onclick="javascript:EmployeesController('delete')">Eliminar</button>
+	            </div>
+	    		<p>
+	    	    <div class="alert alert-danger" id="msg" hidden="true">
+	  			</div>
+	        	<div class="input-group">
+	    			<span class="input-group-addon">Rut</span>
+	    			<input id="rut" type="text" class="form-control" name="rut">
+	  			</div>
+	  			<p>
+	  			<div class="input-group">
+	    			<span class="input-group-addon">Numero modulo</span>
+	    			<input id="numero_modulo" type="text" class="form-control" name="numero_modulo" required>
+	  			</div>
+	   			<div class="input-group">
+	    			<span class="input-group-addon">Numero evaluacion</span>
+	    			<input id="numero_evaluacion" type="text" class="form-control" name="numero_evaluacion" required>
+	  			</div>
+	     			<div class="input-group">
+	    			<span class="input-group-addon">Nota</span>
+	    			<input id="nota" type="text" class="form-control" name="nota" required>
+	  			</div>
+	   			<div class="input-group">
+	    			<span class="input-group-addon">Codigo curso</span>
+	    			<input id="cod_curso" type="text" class="form-control" name="cod_curso" required>
+	  			</div>
+	  		   	
+	  			<p>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Modal -->
+	<div id="myModal" class="modal fade"  role="dialog">
+  		<div class="modal-dialog">
+    	<!-- Modal content-->
+    	<div class="modal-content">
+      		<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal">Close</button>
+        		<h4 class="modal-title">Lista de Notas</h4>
+      		</div>
+      		<div class="modal-body">
+      			<div class="table-responsive" style='height:100%' id='tableDivContainer'>
+      				<table class="table table-condensed" id='notasTable' data-toggle="table" data-height="299">
+		        	<thead><tr>
+						<th data-field="numero_modulo">Numero modulo</th>
+						<th data-field="numero_evaluacion">Numero evaluacion</th>
+						<th data-field="nota">Nota</th>
+						<th data-field="cod_curso">Codigo curso</th>
+						<th data-field="rut">Rut</th>
+					</tr>
+		        	</thead>
+		        	</table>
+		        </div>
+	      	</div>
+      		<div class="modal-footer">
+        		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      		</div>
+    	</div>
+		</div>
+	</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/js/bootstrap.js" th:href="@{/js/bootstrap.js}"></script>
+<script src="/js/bootstrap-table.min.js" th:href="@{/js/bootstrap-table.min.js}"></script>
+
+</body>
+
+</html>
